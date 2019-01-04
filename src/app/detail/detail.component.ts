@@ -28,7 +28,6 @@ export class DetailComponent implements OnInit
     this.beerService.getBeerByKey(key)
     .subscribe(data => {
      this.beer = data;
-     console.log(typeof(this.beer));
     });
   }
 }

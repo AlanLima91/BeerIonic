@@ -19,7 +19,7 @@
       <ion-col col-12 col-sm>
         <ion-button [routerLink]="['/detail', beer.key]">More</ion-button>
         <ion-button color="warning" [routerLink]="['/edit', beer.key]">Edit</ion-button>
-        <ion-button color="danger" (click)="deleteBeer(beer.key)">X</ion-button>
+        <ion-button color="danger" (click)="alertDel(beer.key)">X</ion-button>
       </ion-col>
     </ion-row>
   </ion-row>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Beer } from '../beer';
 import { Observable, Subject } from 'rxjs';
 import { BeerService } from '../beer.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +14,7 @@ export class Tab1Page implements OnInit
   liste: any[] = [];
   beers$: Observable<Beer[]>;
 
-  constructor(private beerService: BeerService) { }
+  constructor(private beerService: BeerService, private alertController: AlertController) { }
 
   ngOnInit()
   {
@@ -22,8 +23,7 @@ export class Tab1Page implements OnInit
 
   getBeers()
   {
-    this.beerService.getBeers()
-     .subscribe(data =>
+    this.beerService.getBeers().subscribe(data =>
       {
         this.liste = [];
         let cle = Object.keys(data);
@@ -33,7 +33,30 @@ export class Tab1Page implements OnInit
           this.liste.push({key: cle[i], values:donnees[i]});
         }
       });
-   }
+  }
+
+  async alertDel(key)
+  {
+    const del = await this.alertController.create({
+      header: 'Delete a Beer ?',
+      message: 'Are you sure want delete this beer ?',
+      buttons:[
+        {
+          text: 'No',
+          cssClass: 'danger',
+          handler: () => { }
+        },
+        {
+          text: 'Yes',
+          handler: () =>
+          {
+            this.deleteBeer(key);
+          }
+        }
+      ]
+    });
+    await del.present();
+  }
 
    deleteBeer(key)
    {

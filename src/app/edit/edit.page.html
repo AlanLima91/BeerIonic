@@ -7,27 +7,32 @@
 <ion-content>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <ion-item>
-      <ion-label float="left">Name</ion-label>
+      <ion-label>Name</ion-label>
       <ion-input type="text" name="name" [ngModel]="beer?.name" required></ion-input><br>
     </ion-item>
-    <div class="col-6">
-        <label for="price"> Price</label><br>
-        <input type="number" name="price" [ngModel]="beer?.price" ngModel required><br>
+
+    <ion-item>
+        <ion-label>Price</ion-label>
+        <ion-input type="number" name="price" [ngModel]="beer?.price" required></ion-input>€<br>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Degree</ion-label>
+        <ion-input type="number" name="degree" [ngModel]="beer?.degree" required></ion-input><br>
+    </ion-item>
+
+    <ion-item>
+        <ion-label float="left">Image</ion-label>
+        <ion-input type="text" name="image" [ngModel]="beer?.image" required></ion-input><br>
+    </ion-item>
+
+    <ion-item>
+        <ion-label float="left">Date</ion-label>
+        <ion-input type="date" name="date" [ngModel]="beer?.date" required></ion-input><br>
+    </ion-item>
+
+    <div class="col-12 mt-5">
+      <ion-button type="submit" size="full">Edit</ion-button>
     </div>
-    <div class="col-6">
-        <label for="degree"> Degree</label><br>
-        <input type="number" name="degree" [ngModel]="beer?.degree" ngModel required><br>
-    </div>
-    <div class="col-6">
-        <label for="image"> Image</label><br>
-        <input type="text" name="image" [ngModel]="beer?.image" ngModel required><br>
-    </div>
-    <div class="col-6">
-        <label for="date"> Date</label><br>
-      <input type="date" name="date" [ngModel]="beer?.date" ngModel required><br>
-    </div>
-      <div class="col-12 mt-5">
-          <button type="submit" class="btn btn-success">Edit</button>
-      </div>
-    </form>
+  </form>
 </ion-content>

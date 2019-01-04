@@ -10,7 +10,7 @@
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <ion-item>
           <ion-label floating>Name</ion-label>
-            <ion-input type="text" name="name" ngModel required></ion-input><br>
+          <ion-input type="text" name="name" ngModel required></ion-input><br>
         </ion-item>
 
         <ion-item>
@@ -34,7 +34,8 @@
         </ion-item>
 
         <div margin>
-         <ion-button type="submit" size="full">Ajouter</ion-button>
+         <ion-button color="success" type="submit" size="full">Ajouter</ion-button>
+         <!-- (click)="alertDel(beer.key)" -->
         </div>
       </form>
 </ion-content>
