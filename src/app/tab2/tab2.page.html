@@ -1,9 +1,39 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Nouvelle bière
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-row>
+    <ion-col col-12>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
+        <ion-col col-6>
+            <label for="name"> Name</label><br>
+            <input type="text" name="name" ngModel required class="w-100"><br>
+        </ion-col>
+        <ion-col col-6>
+            <label for="price"> Price</label><br>
+            <input type="number" name="price" ngModel required><br>
+        </ion-col>
+        <ion-col col-6>
+            <label for="degree"> Degree</label><br>
+            <input type="number" name="degree" ngModel required><br>
+        </ion-col>
+        <ion-col col-6>
+            <label for="image"> Image</label><br>
+            <input type="text" name="image" ngModel required><br>
+        </ion-col>
+        <ion-col col-6>
+            <label for="date"> Date</label><br>
+          <input type="date" name="date" ngModel required><br>
+        </ion-col>
+        <ion-col col-12>
+         <ion-button type="submit" color=tertiary>Ajouter</ion-button>
+        </ion-col>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-content>
