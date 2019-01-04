@@ -8,14 +8,16 @@
 
 <ion-content>
     <ion-row margin>
-      <ion-col col-6>
+      <ion-col>
+        <img src="{{ beer?.image }}" alt="{{ beer?.name }}">
+      </ion-col>
+    </ion-row>
+    <ion-row margin text-justify>
+      <ion-col>
         Degree : {{ beer?.degree }}°<br/>
         Date : {{ beer?.date | date:'short'}}<br/>
         {{ beer?.price }} €<br/>
-        <ion-button>Retour aux bières</ion-button>
-      </ion-col>
-      <ion-col col-6>
-          <img src="{{ beer?.image }}" alt="{{ beer?.name }}">
+        <ion-button [routerLink]="['']">Retour aux bières</ion-button>
       </ion-col>
     </ion-row>
   </ion-content>

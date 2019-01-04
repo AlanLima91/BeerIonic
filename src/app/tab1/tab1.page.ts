@@ -18,7 +18,10 @@ export class Tab1Page implements OnInit
 
   ngOnInit()
   {
-    this.getBeers();
+    ionViewWillEnter()
+    {
+      this.getBeers();
+    }
   }
 
   getBeers()
