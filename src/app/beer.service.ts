@@ -43,6 +43,16 @@ export class BeerService
     );
   }
 
+  // PUT :  Edit a beer
+  editBeer(beer: Beer, key: string): Observable<Beer>
+  {
+    const url = `https://beers-cf53e.firebaseio.com/beers/`+key+'.json';
+    return this.http.put<Beer>(url, beer, {responseType: 'json'}).pipe(
+      tap((product: Beer) => console.log('beer edited')),
+      catchError(this.handleError<Beer>('editBeer'))
+    );
+  }
+
   /** DELETE: delete one beer */
   deleteBeer(key: string): Observable<Beer>
   {

@@ -18,7 +18,7 @@ export class Tab2Page
   {
     this.beerService.addBeer(form.form.value).subscribe(beer =>
       {
-        this.router.navigateByUrl('../tab1/tab1.module#Tab1PageModule');
+        this.router.navigateByUrl('../tabs/tab1.module#Tab1PageModule');
       });
   }
 }

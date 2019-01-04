@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Beer } from '../beer';
 import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { BeerService } from '../beer.service';
 
 @Component({
@@ -18,10 +17,7 @@ export class Tab1Page implements OnInit
 
   ngOnInit()
   {
-    ionViewWillEnter()
-    {
-      this.getBeers();
-    }
+    this.getBeers();
   }
 
   getBeers()
@@ -29,6 +25,7 @@ export class Tab1Page implements OnInit
     this.beerService.getBeers()
      .subscribe(data =>
       {
+        this.liste = [];
         let cle = Object.keys(data);
         let donnees = Object.values(data);
         for(let i = 0; i < cle.length; i++)
@@ -43,4 +40,9 @@ export class Tab1Page implements OnInit
      this.beerService.deleteBeer(key).subscribe();
      this.liste = this.liste.filter(liste => liste.key !== key);
    }
+
+  public ionViewWillEnter():void
+  {
+    this.getBeers();
+  }
 }

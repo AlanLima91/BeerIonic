@@ -7,33 +7,34 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <ion-col col-12>
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
-        <ion-col col-6>
-            <label for="name"> Name</label><br>
-            <input type="text" name="name" ngModel required class="w-100"><br>
-        </ion-col>
-        <ion-col col-6>
-            <label for="price"> Price</label><br>
-            <input type="number" name="price" ngModel required><br>
-        </ion-col>
-        <ion-col col-6>
-            <label for="degree"> Degree</label><br>
-            <input type="number" name="degree" ngModel required><br>
-        </ion-col>
-        <ion-col col-6>
-            <label for="image"> Image</label><br>
-            <input type="text" name="image" ngModel required><br>
-        </ion-col>
-        <ion-col col-6>
-            <label for="date"> Date</label><br>
-          <input type="date" name="date" ngModel required><br>
-        </ion-col>
-        <ion-col col-12>
-         <ion-button type="submit" [routerLink]="['']" >Ajouter</ion-button>
-        </ion-col>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+            <ion-input type="text" name="name" ngModel required></ion-input><br>
+        </ion-item>
+
+        <ion-item>
+            <ion-label for="price"> Price</ion-label><br>
+            <ion-input type="number" name="price" ngModel required></ion-input><br>
+          </ion-item>
+
+          <ion-item>
+            <ion-label for="degree"> Degree</ion-label><br>
+            <ion-input type="number" name="degree" ngModel required></ion-input><br>
+          </ion-item>
+
+          <ion-item>
+            <ion-label for="image"> Image</ion-label><br>
+            <ion-input type="text" name="image" ngModel required></ion-input><br>
+          </ion-item>
+
+          <ion-item>
+            <ion-label for="date"> Date</ion-label><br>
+          <ion-input type="date" name="date" ngModel required></ion-input><br>
+        </ion-item>
+
+        <div margin>
+         <ion-button type="submit" size="full">Ajouter</ion-button>
+        </div>
       </form>
-    </ion-col>
-  </ion-row>
 </ion-content>

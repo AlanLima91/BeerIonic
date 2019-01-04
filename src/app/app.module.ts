@@ -11,10 +11,9 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './detail/detail.component';
-import { EditComponent } from './edit/edit.component';
 
 @NgModule({
-  declarations: [AppComponent, DetailComponent, EditComponent],
+  declarations: [AppComponent, DetailComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
